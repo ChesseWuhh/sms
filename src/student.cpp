@@ -178,23 +178,18 @@ std::vector<Student> StudentManager::findStudentsByCondition(
     for (const auto& student : students) {
         bool match = false;
         
-        switch(field){
-            case "id":
+       
+         if (field == "id") {
                 match = (student.id.find(value) != std::string::npos);
-                break;
-            case "name":
+            } else if (field == "name") {
                 match = (student.name.find(value) != std::string::npos);
-                break;
-            case "department":
+            } else if (field == "department") {
                 match = (student.department.find(value) != std::string::npos);
-                break;
-            case "major":
+            } else if (field == "major") {
                 match = (student.major.find(value) != std::string::npos);
-                break;
-            case "class":
+            } else if (field == "class") {
                 match = (student.className.find(value) != std::string::npos);
-                break;
-        }
+            }
         
         if (match) {
             result.push_back(student);
