@@ -1,5 +1,5 @@
-#include "io"
-#include "student"
+#include "io.hpp"
+#include "student.hpp"
 
 #include <iostream>
 #include <vector>
