@@ -1,0 +1,5 @@
+# ninja log v7
+2	585	7887306146403426	CMakeFiles/StudentManagementSystem.dir/main.cpp.obj	e48f0a684da3735d
+7	892	7887306146466964	CMakeFiles/StudentManagementSystem.dir/src/io.cpp.obj	6666e03c20203a19
+5	2668	7887306146436721	CMakeFiles/StudentManagementSystem.dir/src/student.cpp.obj	d052baac907a5d69
+2669	2773	7887306173099648	StudentManagementSystem.exe	5d7294f18402fe71

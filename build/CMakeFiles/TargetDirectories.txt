@@ -1,0 +1,3 @@
+C:/Users/minato/Desktop/sms/build/CMakeFiles/StudentManagementSystem.dir
+C:/Users/minato/Desktop/sms/build/CMakeFiles/edit_cache.dir
+C:/Users/minato/Desktop/sms/build/CMakeFiles/rebuild_cache.dir

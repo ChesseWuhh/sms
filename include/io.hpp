@@ -1,22 +1,9 @@
-#ifndef IO_H
-#define IO_H
+#ifndef IO_HPP
+#define IO_HPP
 
 #include <string>
 #include <vector>
-
 #include "student.hpp"
-
-void addStudent();
-void deleteStudent();
-void updateStudent();
-void searchStudents();
-void showAllStudents();
-void showStatistics();
-void sortStudents();
-void backupData();
-void importExportData();
-void saveData();
-void reloadData();
 
 // 输入辅助类
 class InputHelper {
@@ -31,7 +18,8 @@ public:
 // 文件存储类
 class FileStorage {
 private:
-    std::string dataFile = "data/students.txt";
+    std::string dataDir;      // 确保这个私有成员存在
+    std::string dataFile;
     void ensureDataDirectory();
     
 public:
@@ -55,4 +43,4 @@ public:
     static void pause();
 };
 
-#endif
+#endif // IO_HPP
