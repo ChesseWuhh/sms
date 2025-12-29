@@ -1,4 +1,9 @@
-#include "../include/student.h"
+#include "student.h"
+#include <iostream>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+
 
 //Student 类实现
 

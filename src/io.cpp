@@ -1,7 +1,20 @@
-#include "../include/io.h"
-
+#include "io.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <limits>
+#include <filesystem>
+#include <iomanip>
+#include <sstream>
+#include <chrono>
+#include <ctime>
+#include <algorithm>
 
 namespace fs = std::filesystem;
+
+extern StudentManager studentManager;
+extern FileStorage fileStorage;
 
 //InputHelper 实现
 

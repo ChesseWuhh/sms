@@ -1,36 +1,28 @@
-# CMakeLists.txt
 cmake_minimum_required(VERSION 3.10)
-project(StudentManagementSystem
-    VERSION 1.0.0
-    DESCRIPTION "高校学生信息管理系统"
-    LANGUAGES CXX
-)
+project(sms)
+
+# 编码
+if(MSVC)
+    add_compile_options(/utf-8)
+else()
+    add_compile_options(-finput-charset=UTF-8 -fexec-charset=UTF-8)
+endif()
 
 # 设置C++标准
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
 
-# 设置默认构建类型
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
-endif()
-
-# 设置输出目录
+# 输出目录
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # 编译器选项
 if(MSVC)
-    add_compile_options(/W4 /WX /MP)
-    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+    add_compile_options(/W4)
 else()
-    add_compile_options(-Wall -Wextra -Wpedantic)
-    add_compile_options(-O2)
+    add_compile_options(-Wall -Wextra)
 endif()
 
-# 生成编译数据库（用于IDE）
+# 生成编译数据库
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # 添加可执行文件
@@ -40,11 +32,13 @@ add_executable(${PROJECT_NAME}
     src/io.cpp
 )
 
-# 包含目录
+# 设置包含路径
 target_include_directories(${PROJECT_NAME} PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-message(STATUS "项目 ${PROJECT_NAME} 配置完成！")
-message(STATUS "构建类型: ${CMAKE_BUILD_TYPE}")
-message(STATUS "编译器: ${CMAKE_CXX_COMPILER_ID}")
+# 显示配置信息
+message(STATUS "项目名称: ${PROJECT_NAME}")
+message(STATUS "头文件目录: ${CMAKE_CURRENT_SOURCE_DIR}/include")
+message(STATUS "源文件目录: ${CMAKE_CURRENT_SOURCE_DIR}/src")
+message(STATUS "输出目录: ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")

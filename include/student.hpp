@@ -3,11 +3,6 @@
 
 #include <string>
 #include <vector>
-#include <iostream>
-#include <iomanip>
-#include <sstream>
-#include <algorithm>
-#include <functional>
 
 // 学生结构体
 struct Student {

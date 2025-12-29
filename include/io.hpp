@@ -3,14 +3,6 @@
 
 #include <string>
 #include <vector>
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-#include <sstream>
-#include <limits>
-#include <filesystem>
-#include <chrono>
-#include <ctime>
 
 #include "student.h"
 
