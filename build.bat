@@ -75,15 +75,6 @@ echo.
 echo [SUCCESS] Build completed successfully!
 echo.
 
-REM Show executable location
-if exist bin\StudentManagementSystem.exe (
-    echo Executable: %CD%\bin\StudentManagementSystem.exe
-    echo.
-    echo To run the program:
-    echo   bin\StudentManagementSystem.exe
-) else (
-    echo [WARNING] Executable not found at expected location.
-)
 
 echo.
 pause
