@@ -34,20 +34,20 @@ int main() {
         choice = InputHelper::getString("请选择操作: ");
         
         switch (choice) {
-            case "ADD": addStudent(); break;
-            case "DEL": deleteStudent(); break;
-            case "UPDATE": updateStudent(); break;
-            case "SERCH": searchStudents(); break;
-            case "SHOW": showAllStudents(); break;
-            case "STAT": showStatistics(); break;
-            case "FAIL": 
+            case 1: addStudent(); break;
+            case 2: deleteStudent(); break;
+            case 3: updateStudent(); break;
+            case 4: searchStudents(); break;
+            case 5: showAllStudents(); break;
+            case 6: showStatistics(); break;
+            case 7: 
                 studentManager.showFailingStudents(); 
                 DisplayHelper::pause(); 
                 break;
-            case "SORT": sortStudents(); break;
-            case "SAVE": saveData(); break;
-            case "RELOAD": reloadData(); break;
-            case "EXIT": 
+            case 8: sortStudents(); break;
+            case 9: saveData(); break;
+            case 10: reloadData(); break;
+            case 0: 
                 if (InputHelper::confirm("保存数据并退出系统？")) {
                     saveData();
                 }

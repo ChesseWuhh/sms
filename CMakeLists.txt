@@ -16,6 +16,20 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
 endif()
 
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    # GCC/Clang/MinGW - 指定UTF-8编码
+    if(WIN32)
+        # Windows下MinGW需要额外设置
+        add_compile_options(-fexec-charset=UTF-8)
+        add_compile_options(-finput-charset=UTF-8)
+        message(STATUS "Enabled UTF-8 encoding for MinGW")
+    else()
+        # Linux/macOS默认UTF-8
+        add_compile_options(-finput-charset=UTF-8)
+        message(STATUS "Enabled UTF-8 encoding for GCC/Clang")
+    endif()
+endif()
+
 # 输出目录
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
